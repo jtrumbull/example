@@ -28,9 +28,62 @@ include 'lib/bootstrap.php';
             
             <h1>Zillow API <hr /></h1>
             
+            <!-- Get deep comps
+            ------------------------------------------------------------------>
+            
             <h2>Get deep comps</h2>
             
             <form action="actions/comps.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>Select file for GetDeepComps</label>
+                    <input type="file" name="file" class="form-control" />
+                </div>
+                <button class="btn btn-primary form-control">
+                    Submit
+                </button>
+            </form>
+            
+            <h4 style="margin-top: 20px">Input file specification</h4>
+            
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>client_id</td>
+                        <td>A unique identifier for the record</td>
+                    </tr>
+                    <tr>
+                        <td>api_key</td>
+                        <td>The Zillow Web Service Identifier</td>
+                    </tr>
+                    <tr>
+                        <td>zpid</td>
+                        <td>The Zillow Property ID for the property for which to obtain information</td>
+                    </tr>
+                    <tr>
+                        <td>count</td>
+                        <td>The number of comparable recent sales to obtain (integer between 1 and 25)</td>
+                    </tr>
+                    <tr>
+                        <td>rentzestimate</td>
+                        <td>Return Rent Zestimate information if available (boolean true/false, default: false)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <hr />
+            
+            <!-- Get deep search results
+            ------------------------------------------------------------------>
+            
+            <h2>Get deep search results</h2>
+            
+            <form action="actions/search.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label>Select file for GetDeepComps</label>
                     <input type="file" name="file" class="form-control" />
